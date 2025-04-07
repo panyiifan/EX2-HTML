@@ -9,8 +9,35 @@
     </head>
 
     <body>
-        <img src="assets/shin-chan-banner.jpg" alt="Shinchan Title" width="960" height="412">
-        <img src="assets/naughtiest-son.jpg" alt="Shinchan Title" width="200" height="412">
+        <span id="time"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span>Shinchan - Homepage</span>
+        
+        <script>
+            function formatTime(date) {
+                
+                const year = date.getFullYear();
+                const month = String(date.getMonth() + 1).padStart(2, '0');
+                const day = String(date.getDate()).padStart(2, '0');
+                const hours = String(date.getHours()).padStart(2, '0');
+                const minutes = String(date.getMinutes()).padStart(2, '0');
+    
+                return `${month}/${day}/${year}, ${hours}:${minutes}`;
+            }
+    
+            function showTime() {
+                const now = new Date();
+                const formattedTime = formatTime(now);
+                document.getElementById("time").innerText = formattedTime;
+            }
+    
+            showTime();
+            setInterval(showTime, 1000);
+        </script>
+
+        <center>
+        <img src="assets/shin-chan-banner.jpg" alt="Shinchan Title" width="1022" height="412">
+        <img src="assets/naughtiest-son.jpg" alt="Shinchan Title" width="260" height="412">
+        </center>
 
         <center>
             <a href="#title">Shinchan: Shiro and the Coal Town Game</a>&nbsp;&nbsp;
